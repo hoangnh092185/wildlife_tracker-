@@ -1,0 +1,22 @@
+<h1>$stylist.getName() appointment list</h1>
+
+
+<div class="jumbotron">
+  <ul>
+    #foreach($client in $stylist.getClients())
+      <li>$client.getName()</li>
+      <form class="" action="/stylist/$stylist.getId()/client/$client.getId()/delete" method="post">
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
+      </form>
+    #end
+  </ul>
+</div>
+
+<div class="jumbotron">
+  <h3>New appointment</h3>
+  <form class="" action="/stylist/$stylist.getId()/client/new" method="post">
+    <label for="clientName">Client Name</label>
+    <input id="clientName"type="text" name="clientName" value="">
+    <button class="btn btn-success" type="submit" name="button">Add new appointment</button>
+  </form>
+</div>
